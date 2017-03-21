@@ -202,9 +202,9 @@ local old = self.VeteranLevel
 self.VeteranLevel = level
 local bpA = self:GetBlueprint()
 -- Apply default veterancy buffs
-local buffTypes = { 'Regen', 'Health', 'Damage','DamageArea','Range','Speed','Vision','OmniRadius','Radar','BuildRate','RateOfFire','Shield'}
-local buffACUTypes = {'COMRange','ACUHealth','ACUResourceProduction','ACURateOfFire','COMShield','CEC'}
-local buffSCUTypes = {'COMShield','CEC'}
+local buffTypes = { 'Regen', 'Health', 'Damage','DamageArea','Range','Speed','Vision','OmniRadius','Radar','BuildRate','RateOfFire','Shield','EnergyCap'}
+local buffACUTypes = {'COMRange','ACUHealth','ACUResourceProduction','ACURateOfFire','COMShield'}
+local buffSCUTypes = {'COMShield','ACUResourceProduction'}
 local buffSTRUCTURETypes = {'ResourceProduction'}
 local buffSHIELDTypes = {'EnergyCon'}
 
@@ -251,7 +251,7 @@ if bpA.Categories and table.find(bpA.Categories,'COMMAND') then
 	end
 end
 
-if bpA.Categories and table.find(bpA.Categories,'SUBCOMMAND') then
+if bpA.Categories and table.find(bpA.Categories,'SUBCOMMANDER') then
 	for k,bType in buffSCUTypes do
 		Buff.ApplyBuff( self, 'Veterancy' .. bType)
 	end

@@ -5,7 +5,7 @@
 --**
 --**  Summary  :  Aeon Commander Script
 --**
---**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
+--**  Copyright ï¿½ 2005 Gas Powered Games, Inc.  All rights reserved.
 --****************************************************************************
 
 local oldUAL0001 = UAL0001
@@ -36,6 +36,7 @@ UAL0001 = Class(oldUAL0001) {
                     },
                 }
             end
+
             Buff.ApplyBuff(self, 'AeonACUTResourceAllocation')
         elseif enh == 'ResourceAllocationRemove' then
             Buff.RemoveBuff(self,'AeonACUTResourceAllocation',false)

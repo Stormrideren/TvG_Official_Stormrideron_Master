@@ -2,7 +2,7 @@
 --**
 --**  File     :  /lua/sim/buff.lua
 --**
---**  Copyright © 2008 Gas Powered Games, Inc.  All rights reserved.
+--**  Copyright ï¿½ 2008 Gas Powered Games, Inc.  All rights reserved.
 --****************************************************************************
 
 -- The Unit's BuffTable for applied buffs looks like this:
@@ -25,9 +25,13 @@
 --            }
 --        }
 --    }
-
+--
 --Function to apply a buff to a unit.
 --This function is a fire-and-forget.  Apply this and it'll be applied over time if there is a duration.
+--
+--Mod code originally written by Eni
+--Modified by Eni, Ghaleon(?), Lewnatics(?), Stormrideron and SATA24
+
 function ApplyBuff(unit, buffName, instigator)
     if unit:IsDead() then
         return
@@ -250,6 +254,14 @@ function BuffAffectUnit(unit, buffName, instigator, afterRemove)
 --
 --             unit:SetRegenRate(val)
 --             unit.Sync.RegenRate = val
+
+        elseif atype == 'StorageEnergy' --SATA24
+            local val = BuffCalculate(unit, buffName, 'StorageEnergy', unit:GetBlueprint().StorageEnergy or 0)
+            unit:SetStat('StorageEnergy', val)
+
+        elseif atype == 'StorageMass'   --SATA24
+            local val = BuffCalculate(unit, buffName, 'StorageMass', unit:GetBlueprint().StorageMass or 0)
+            unit:SetStat('StorageMass', val)
 
         elseif atype == 'ShieldHP' then
 
@@ -536,8 +548,8 @@ end
 --BuffCalculate(unit, buffName, 'RateOfFire', wepbp.RateOfFire)
 
 --Calculates the buff from all the buffs of the same time the unit has.
-function BuffCalculate(unit, buffName, affectType, initialVal, initialBool)
-
+function BuffCalculate(unit, buffName, affectType, initialVal, initialBool) --It seems like the argument "buffname" is not used in this function. Perhaps we should delete it from the function definition
+                                                                            --and everywhere BuffCalculate() is called, to perhaps speed things up a bit? --SATA24
     --Add all the
     local adds = 0
     local mults = 1.0
@@ -566,12 +578,12 @@ function BuffCalculate(unit, buffName, affectType, initialVal, initialBool)
             for i=1,v.Count do
                 if v.Mult >= 1 then
                     mults = mults + v.Mult - 1
-                else
-                    divs = divs * v.Mult
-                end
-            end
-        end
-
+                else                            --Here, when calculating the accumulated effect of the "mult" and "div" values of the specified effect on the current unit, why are the mults ADDED, yet 
+                    divs = divs * v.Mult        --the DIVS are multiplied? IE: for a given effect, v.Mult = 1.01, or a 1% gain, and count = 10, and thus MULTS = (1.0 + (10 * (1.01 - 1)), which equals 1.1,
+                end                             --or a 10% buff, or in other words, 100% * 1.1buff. MULTS is not v.Mult ^ count, but rather ((v.Mult - 1) * count) + 1. The value of MULTS increases linearly
+            end                                 --with count. However, if v.Mults = 0.99, or a 1% loss, and count = 10, then DIVS = v.Mult ^ count, and thus, unlike for a positive value of v.Mults, DIVS
+        end                                     --decreases logarithmically, not linearly. Or, in other words, the amount of positive bonus, or increase in value, is based on the ORIGINAL blueprint stat,
+                                                --but the amount of negative bonus, or decrease in value, is based on the CURRENT unit stat, not the original before any TvG buffs. --SATA24
         if not v.Bool then
             bool = false
         else

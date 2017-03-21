@@ -4,9 +4,48 @@
 --**
 --**  Copyright © 2008 Gas Powered Games, Inc.  All rights reserved.
 --****************************************************************************
+--
+--Mod code originally written by Eni
+--Modified by Eni, Ghaleon(?), Lewnatics(?), Stormrideron and SATA24
 
 import('/lua/sim/AdjacencyBuffs.lua')
 import('/lua/sim/CheatBuffs.lua') -- Buffs for AI Cheating
+
+------------------------------------------------------------------------------------------------------------------------------------
+---- VETERANCY BUFFS - UNIT Energy Storage --SATA24
+------------------------------------------------------------------------------------------------------------------------------------
+
+BuffBlueprint {
+    Name = 'VeterancyStorageEnergy',
+    DisplayName = 'VeterancyStorageEnergy',
+    BuffType = 'VETERANCYSTORAGEENERGY',
+    Stacks = 'ALWAYS',
+    Duration = -1,
+    Affects = {
+        StorageEnergy = {
+            Add = 0,
+            Mult = 1.0036,
+        },
+    },
+}
+
+------------------------------------------------------------------------------------------------------------------------------------
+---- VETERANCY BUFFS - UNIT Mass Storage --SATA24
+------------------------------------------------------------------------------------------------------------------------------------
+
+BuffBlueprint {
+    Name = 'VeterancyStorageMass',
+    DisplayName = 'VeterancyStorageMass',
+    BuffType = 'VETERANCYSTORAGEMASS',
+    Stacks = 'ALWAYS',
+    Duration = -1,
+    Affects = {
+        StorageMass = {
+            Add = 0,
+            Mult = 1.0036,
+        },
+    },
+}
 
 ------------------------------------------------------------------------------------------------------------------------------------
 ---- VETERANCY BUFFS - UNIT HEALTH

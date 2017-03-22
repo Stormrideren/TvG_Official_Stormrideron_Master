@@ -239,7 +239,12 @@ local buffSupCan3Types = {'PerkSCC3'}
 local buffSupCan4Types = {'PerkSCC4'}
 local buffSupCan5Types = {'PerkSCC5'}
 
+<<<<<<< HEAD
     -- Works
+=======
+--[[
+if bpA.Categories then
+>>>>>>> origin/master
 	for k,bType in buffTypes do
 		Buff.ApplyBuff( self, 'Veterancy' .. bType)
 	end
@@ -527,6 +532,268 @@ local buffSupCan5Types = {'PerkSCC5'}
         --]]
 
 
+<<<<<<< HEAD
+=======
+if bpA.Categories and table.find(bpA.Categories,'SHIELD') then
+	for k,bType in buffSHIELDTypes do
+		Buff.ApplyBuff( self, 'Veterancy' .. bType)
+	end
+end
+
+		self.Buff25Check = old - math.floor(old/50)*50
+		self.Buff50Check = old - math.floor(old/100)*100
+		self.Buff75Check = old - math.floor(old/150)*150
+		self.Buff100Check = old - math.floor(old/200)*200
+		self.Buff125Check = old - math.floor(old/250)*250
+		self.Buff150Check = old - math.floor(old/300)*300
+		self.Buff175Check = old - math.floor(old/350)*350
+		self.Buff200Check = old - math.floor(old/400)*400
+		
+		self.BuffME1Check = old - math.floor(old/100)*100
+		self.BuffME2Check = old - math.floor(old/175)*175
+		self.BuffME3Check = old - math.floor(old/250)*250
+
+		self.BuffRam1Check = old - math.floor(old/75)*75
+		self.BuffRam2Check = old - math.floor(old/150)*150
+		self.BuffRam3Check = old - math.floor(old/225)*225
+		self.BuffRam4Check = old - math.floor(old/300)*300
+		self.BuffRam5Check = old - math.floor(old/375)*375
+
+		self.BuffACUHealth1Check = old - math.floor(old/100)*100
+		self.BuffACUHealth2Check = old - math.floor(old/200)*200
+		self.BuffACUHealth3Check = old - math.floor(old/300)*300
+		self.BuffACUHealth4Check = old - math.floor(old/400)*400
+		self.BuffACUHealth5Check = old - math.floor(old/500)*500
+
+		self.BuffSupCan1Check = old - math.floor(old/100)*100
+		self.BuffSupCan2Check = old - math.floor(old/200)*200
+		self.BuffSupCan3Check = old - math.floor(old/300)*300
+		self.BuffSupCan4Check = old - math.floor(old/400)*400
+		self.BuffSupCan5Check = old - math.floor(old/500)*500
+		
+		self.BuffHardenedCheck = old - math.floor(old/600)*600
+		self.BuffVeteranCheck = old - math.floor(old/800)*800
+		self.BuffEliteCheck = old - math.floor(old/1000)*1000
+
+		if self.BuffSupCan1Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'COMMAND') then
+				for k,bType in buffSupCan1Types do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+		
+		if self.BuffSupCan2Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'COMMAND') then
+				for k,bType in buffSupCan2Types do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+		
+		if self.BuffSupCan3Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'COMMAND') then
+				for k,bType in buffSupCan3Types do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+		
+		if self.BuffSupCan4Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'COMMAND') then
+				for k,bType in buffSupCan4Types do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+		
+		if self.BuffSupCan5Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'COMMAND') then
+				for k,bType in buffSupCan5Types do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+		
+		if self.BuffHardenedCheck == 0 then
+		 	for k,bType in buffHardenedTypes do
+		     	Buff.ApplyBuff( self, 'Veterancy' .. bType)
+		     end
+		end
+
+		if self.BuffVeteranCheck == 0 then
+		 	for k,bType in buffVeteranTypes do
+		     	Buff.ApplyBuff( self, 'Veterancy' .. bType)
+		     end
+		end
+
+		if self.BuffEliteCheck == 0 then
+		 	for k,bType in buffEliteTypes do
+		     	Buff.ApplyBuff( self, 'Veterancy' .. bType)
+		     end
+		end
+		
+		if self.BuffACUHealth1Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'COMMAND') then
+				for k,bType in buffACUHealthTypes do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+
+		if self.BuffACUHealth2Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'COMMAND') then
+				for k,bType in buffACUHealthTypes do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+		
+		if self.BuffACUHealth3Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'COMMAND') then
+				for k,bType in buffACUHealthTypes do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+		
+		if self.BuffACUHealth4Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'COMMAND') then
+				for k,bType in buffACUHealthTypes do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+		
+		if self.BuffACUHealth5Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'COMMAND') then
+				for k,bType in buffACUHealthTypes do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+
+		if self.BuffRam1Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'SUBCOMMANDER') then
+				for k,bType in buffRam1Types do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+		
+		if self.BuffRam2Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'SUBCOMMANDER') then
+				for k,bType in buffRam2Types do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+
+			if self.BuffRam3Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'SUBCOMMANDER') then
+				for k,bType in buffRam3Types do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+
+		if self.BuffRam4Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'SUBCOMMANDER') then
+				for k,bType in buffRam4Types do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+
+		if self.BuffRam5Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'SUBCOMMANDER') then
+				for k,bType in buffRam5Types do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+		
+		if self.BuffME1Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'STRUCTURE') then
+				for k,bType in buffME1Types do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+
+		if self.BuffME2Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'STRUCTURE') then
+				for k,bType in buffME2Types do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+		
+		if self.BuffME3Check == 0 then
+			if bpA.Categories and table.find(bpA.Categories,'STRUCTURE') then
+				for k,bType in buffME3Types do
+					Buff.ApplyBuff( self, 'Veterancy' .. bType)
+				end
+			end
+		end
+		
+		if self.Buff25Check == 0 then
+		 	for k,bType in buff25Types do
+		     	Buff.ApplyBuff( self, 'Veterancy' .. bType)
+		     end
+		end
+
+		if self.Buff50Check == 0 then
+		 	for k,bType in buff50Types do
+		     	Buff.ApplyBuff( self, 'Veterancy' .. bType)
+		     end
+		end
+
+		if self.Buff75Check == 0 then
+		 	for k,bType in buff75Types do
+		     	Buff.ApplyBuff( self, 'Veterancy' .. bType)
+		     end
+		end
+		
+		if self.Buff100Check == 0 then
+		 	for k,bType in buff100Types do
+				local shield = self:GetShield()
+	            if not shield then 
+	            	--self:AddToggleCap('RULEUTC_ShieldToggle')
+	            	self:CreateShield(bpA)
+	            	--self:SetEnergyMaintenanceConsumptionOverride(bpA.MaintenanceConsumptionPerSecondEnergy or 0)
+	            	--self:SetMaintenanceConsumptionActive()
+	            end
+		     	Buff.ApplyBuff( self, 'Veterancy' .. bType)
+		     end
+		end
+		
+		if self.Buff125Check == 0 then
+		 	for k,bType in buff125Types do
+		     	Buff.ApplyBuff( self, 'Veterancy' .. bType)
+		     end
+		end
+		
+		if self.Buff150Check == 0 then
+		 	for k,bType in buff150Types do
+		     	Buff.ApplyBuff( self, 'Veterancy' .. bType)
+		     end
+		end
+				
+		if self.Buff175Check == 0 then
+		 	for k,bType in buff175Types do
+		     	Buff.ApplyBuff( self, 'Veterancy' .. bType)
+		     end
+		end
+				
+		if self.Buff200Check == 0 then
+		 	for k,bType in buff200Types do
+		     	Buff.ApplyBuff( self, 'Veterancy' .. bType)
+		     end
+		end
+--]]
+
+>>>>>>> origin/master
         -- Get any overriding buffs if they exist
         local bp = self:GetBlueprint().Buffs
         --Check for unit buffs

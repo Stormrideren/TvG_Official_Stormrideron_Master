@@ -239,6 +239,7 @@ local buffSupCan3Types = {'PerkSCC3'}
 local buffSupCan4Types = {'PerkSCC4'}
 local buffSupCan5Types = {'PerkSCC5'}
 
+--[[
 if bpA.Categories then
 	for k,bType in buffTypes do
 		Buff.ApplyBuff( self, 'Veterancy' .. bType)
@@ -520,7 +521,8 @@ end
 		     	Buff.ApplyBuff( self, 'Veterancy' .. bType)
 		     end
 		end
-		
+--]]
+
         -- Get any overriding buffs if they exist
         local bp = self:GetBlueprint().Buffs
         --Check for unit buffs

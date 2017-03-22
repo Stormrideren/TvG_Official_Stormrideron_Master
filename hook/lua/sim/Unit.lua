@@ -239,19 +239,13 @@ local buffSupCan3Types = {'PerkSCC3'}
 local buffSupCan4Types = {'PerkSCC4'}
 local buffSupCan5Types = {'PerkSCC5'}
 
-<<<<<<< HEAD
-    -- Works
-=======
---[[
-if bpA.Categories then
->>>>>>> origin/master
 	for k,bType in buffTypes do
 		Buff.ApplyBuff( self, 'Veterancy' .. bType)
 	end
 
-         if (old ==  600)  then self.BuffHardenedCheck = true 
-         if (old ==  800)  then self.BuffVeteranCheck  = true
-         if (old == 1000) then self.BuffEliteCheck    = true
+         if (old ==  600)  then self.BuffHardenedCheck = true end
+         if (old ==  800)  then self.BuffVeteranCheck  = true end
+         if (old == 1000) then self.BuffEliteCheck    = true end
  
      -- Commander stopped spawning at here. 
          if (self.BuffHardenedCheck) then 

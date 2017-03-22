@@ -255,11 +255,11 @@ function BuffAffectUnit(unit, buffName, instigator, afterRemove)
 --             unit:SetRegenRate(val)
 --             unit.Sync.RegenRate = val
 
-        elseif atype == 'StorageEnergy' --SATA24
+        elseif atype == 'StorageEnergy' then
             local val = BuffCalculate(unit, buffName, 'StorageEnergy', unit:GetBlueprint().StorageEnergy or 0)
             unit:SetStat('StorageEnergy', val)
 
-        elseif atype == 'StorageMass'   --SATA24
+        elseif atype == 'StorageMass' then
             local val = BuffCalculate(unit, buffName, 'StorageMass', unit:GetBlueprint().StorageMass or 0)
             unit:SetStat('StorageMass', val)
 
